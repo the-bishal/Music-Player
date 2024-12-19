@@ -1,0 +1,23 @@
+.scrollBarNone {
+    scrollbar-width: none;  /* Firefox */
+    -ms-overflow-style: none;  /* Internet Explorer */
+  }
+  
+.scrollBarNone::-webkit-scrollbar {
+    display: none;  /* Chrome, Safari */
+  }
+
+  .scrollBarNone {
+    position: relative;
+  }
+  
+  .scrollBarNone:hover .scroll-button {
+    opacity: 0;
+    transition: opacity 0.3s ease;
+  }
+  
+  .scroll-button {
+    transition: opacity 0.3s ease;
+  }
+
+
