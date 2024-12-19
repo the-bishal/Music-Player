@@ -10,6 +10,7 @@ export default {
         'primaryHover' : '#2A2A2A',
         'primary': '#1F1F1F',
         'secondary': '#ADADAD',
+        'cardBg': '#121212',
       },
     },
   },
