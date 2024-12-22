@@ -4,7 +4,7 @@ const Input = ({
     placeholder = '',
     type = 'text',
     className = '',
-    bgColor = 'bg-primary',
+    bgColor = 'bg-white',
     textColor = 'text-secondary',
     label,
     labelClass = '',
