@@ -42,16 +42,16 @@ const MusicControls = () => {
 
       <section className='flex flex-col items-center justify-center space-y-2'>
         <div className='flex items-center justify-center space-x-4'>
-            <IoShuffle className='text-secondary text-2xl font-normal' />
-            <MdSkipPrevious className='text-secondary text-2xl' />
-            <div className='w-8 h-8 bg-white rounded-full flex items-center justify-center cursor-pointer hover:scale-110 duration-200'>
+            <IoShuffle className='text-secondary text-2xl font-normal hover:text-white duration-100 cursor-pointer' />
+            <MdSkipPrevious className='text-secondary text-2xl hover:text-white duration-100 cursor-pointer' />
+            <div className='w-8 h-8 bg-white rounded-full flex items-center justify-center cursor-pointer hover:scale-110 hover:bg-gray-200 duration-200'>
                 {!isPlaying ? 
                     (<IoIosPlay className='text-black text-xl font-normal' />) : 
                     (<IoPauseOutline className='text-black text-xl font-normal' />)
                 }
             </div>
-            <MdSkipNext className='text-secondary text-2xl' />
-            <SlLoop className='text-secondary text-md font-normal' />
+            <MdSkipNext className='text-secondary text-2xl hover:text-white duration-100 cursor-pointer' />
+            <SlLoop className='text-secondary text-md font-normal hover:text-white duration-100 cursor-pointer' />
         </div>
         <div className='flex items-center justify-center space-x-2'>
             <p className='text-xs text-secondary'>0:00</p>
