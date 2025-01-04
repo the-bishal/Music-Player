@@ -3,6 +3,7 @@ import Input from './Input'
 import Tiger from '../assets/images/tiger.png'
 import { useNavigate } from 'react-router'
 import { useForm } from "react-hook-form"
+import authService from "../music_backend/auth"
 
 const SignupComp = () => {
 
@@ -14,12 +15,24 @@ const SignupComp = () => {
   }
 
   const createUser = async (data) => {
-    const formData = new FormData();
-    formData.append("username", data.username)
-    formData.append("email", data.email)
-    formData.append("fullName", data.fullName)
-    formData.append("password", data.password)
-    formData.append("avatar", data.avatar[0])
+    try {
+      const formData = new FormData();
+      formData.append("username", data.username)
+      formData.append("email", data.email)
+      formData.append("fullName", data.fullName)
+      formData.append("password", data.password)
+      formData.append("avatar", data.avatar[0])
+
+      const userData = await authService.registerUser(formData)
+      if (!userData || userData instanceof Error) {
+        throw new Error(userData.message);
+      }
+
+      navigate('/login')
+
+    } catch (error) {
+      console.log(error);
+    }
   }
 
   return (
