@@ -5,10 +5,15 @@ import { IoIosSearch } from "react-icons/io";
 import { TbCategoryPlus } from "react-icons/tb";
 import { FaRegBell } from "react-icons/fa";
 import Button from '../Button';
+import { useNavigate } from 'react-router-dom';
 
 const Header = () => {
 
+    const navigate = useNavigate()
     const [isLogin, setIsLogin] = useState(false)
+    const handleNavigate = (slug) => {
+        navigate(slug)
+    }
 
   return (
     <div className='w-full bg-black text-white min-h-16 flex items-center justify-between'>
@@ -26,7 +31,10 @@ const Header = () => {
 
         {/* Home */}
         <div className='flex items-center justify-center cursor-pointer duration-500 bg-primary group-hover:bg-primaryHover rounded-full h-12 w-12 group'>
-            <MdOutlineHome className="text-secondary text-2xl hover:text-white hover:scale-110 transition-transform group"/>
+            <MdOutlineHome 
+              className="text-secondary text-2xl hover:text-white hover:scale-110 transition-transform group"
+              onClick={() => handleNavigate('/')}
+            />
         </div>
 
         {/* Search Box */}
@@ -74,10 +82,21 @@ const Header = () => {
         <div className='flex items-center justify-center gap-2 mr-8'>
 
             {/* Signup */}
-            <Button children="Signup" textColor='text-secondary' className='duration-200 font-semibold hover:text-white hover:scale-110'/>
+            <Button 
+              children="Signup" 
+              textColor='text-secondary' 
+              className='duration-200 font-semibold hover:text-white hover:scale-110'
+              onClick={() => handleNavigate('/signup')}
+            />
 
             {/* Login */}
-            <Button children="Login" bgColor='bg-white' textColor='text-black' className='px-6 duration-200 font-semibold hover:scale-110 rounded-full'/>
+            <Button 
+              children="Login" 
+              bgColor='bg-white' 
+              textColor='text-black' 
+              className='px-6 duration-200 font-semibold hover:scale-110 rounded-full'
+              onClick={() => handleNavigate('/login')}
+            />
         </div>
       )}
 
