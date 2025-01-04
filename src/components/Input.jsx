@@ -9,7 +9,7 @@ const Input = ({
     label,
     labelClass = '',
     ...props
-}) => {
+},ref) => {
 
     const id = useId()
 
