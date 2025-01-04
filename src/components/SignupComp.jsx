@@ -25,7 +25,7 @@ const SignupComp = () => {
 
       const userData = await authService.registerUser(formData)
       if (!userData || userData instanceof Error) {
-        throw new Error(userData.message);
+        throw new Error(userData);
       }
 
       navigate('/login')
@@ -54,15 +54,15 @@ const SignupComp = () => {
             <div>
               <Input
                 label="Full Name"
-                {...register('name', {
-                  required: 'name is required'
+                {...register('fullName', {
+                  required: 'fullName is required'
                 })}
                 placeholder='Enter your name'
                 className='w-full px-3 py-2 rounded-md  focus:outline-none focus:ring-2 focus:ring-green-500'
                 labelClass='block text-gray-400 text-sm font-bold mb-1'
               />
             </div>
-            {errors.name && <p className="text-red-500 mb-1 -mt-3">{errors.name.message}</p>}
+            {errors.fullName && <p className="text-red-500 mb-1 -mt-3">{errors.fullName.message}</p>}
             <div className="mt-2">
               <Input
                 label="Username"
