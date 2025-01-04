@@ -14,7 +14,7 @@ const Input = ({
     const id = useId()
 
     return (
-        <div className='flex flex-col gap-2 w-full'>
+        <div className='flex flex-col w-full'>
             {label && <label
                 htmlFor = {id}
                 className={`${labelClass}`}

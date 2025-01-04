@@ -2,12 +2,15 @@ import React from 'react'
 import Input from './Input'
 import conf from '../conf/conf'
 import Tiger from '../assets/images/tiger.png'
+import { useNavigate } from 'react-router'
 
 const SignupComp = () => {
 
-  console.log(conf.clientId)
-  console.log(conf.clientSecret)
-  console.log(conf.redirectUri)
+  const navigate = useNavigate()
+
+  const handleNavigate = () => {
+    navigate("/login")
+  }
 
   return (
     <div className="h-screen flex flex-col md:flex-row">
@@ -23,41 +26,57 @@ const SignupComp = () => {
       {/* Right side with signup form */}
       <div className="md:w-1/2 w-full bg-transparent flex items-center justify-center p-6">
         <div className="w-full max-w-md">
-          <h2 className="text-3xl md:text-5xl font-bold text-white mb-6">Sign Up</h2>
-          <form>
-            <div className="mb-4">
+          <h2 className="text-3xl text-center md:text-4xl font-bold text-white">Sign Up</h2>
+          <form className='shadow shadow-slate-700 p-5'>
+            <div>
+              <Input
+                label="Full Name"
+                placeholder='Enter your name'
+                className='w-full px-3 py-2 rounded-md  focus:outline-none focus:ring-2 focus:ring-green-500'
+                labelClass='block text-gray-400 text-sm font-bold mb-1'
+              />
+              </div>
+            <div className="mt-2">
               <Input 
                 label="Username"
                 placeholder="Username"
                 className="w-full px-3 py-2 rounded-md  focus:outline-none focus:ring-2 focus:ring-green-500"
-                labelClass="block text-gray-400 text-sm font-bold mb-2"
+                labelClass="block text-gray-400 text-sm font-bold mb-1"
               />
             </div>
-            <div className="mb-4">
+            <div className="mt-2">
               <Input 
                 label="Email"
                 type="email"
                 placeholder="Email"
                 className="w-full px-3 py-2 rounded-md  focus:outline-none focus:ring-2 focus:ring-green-500"
-                labelClass="block text-gray-400 text-sm font-bold mb-2"
+                labelClass="block text-gray-400 text-sm font-bold mb-1"
               />
             </div>
-            <div className="mb-4">
+            <div className='mt-2'>
+              <Input
+                label='Avatar'
+                type='file'
+                className='rounded'
+                labelClass='block text-gray-400 text-sm font-bold mb-1'
+              />
+            </div>
+            <div className="mt-2">
               <Input 
                 label="Password"
                 type="password"
                 placeholder="Password"
                 className="w-full px-3 py-2 rounded-md  focus:outline-none focus:ring-2 focus:ring-green-500"
-                labelClass="block text-gray-400 text-sm font-bold mb-2"
+                labelClass="block text-gray-400 text-sm font-bold mb-1"
               />
             </div>
-            <div className="mb-6">
+            <div className="mb-6 mt-2">
               <Input 
                 label="Confirm Password"
                 type="password"
                 placeholder="Confirm Password"
                 className="w-full px-3 py-2 rounded-md  focus:outline-none focus:ring-2 focus:ring-green-500"
-                labelClass="block text-gray-400 text-sm font-bold mb-2"
+                labelClass="block text-gray-400 text-sm font-bold mb-1"
               />
             </div>
             <div className="flex items-center justify-between">
@@ -69,6 +88,7 @@ const SignupComp = () => {
               </button>
             </div>
           </form>
+          <p className='block text-gray-400 text-sm font-bold mt-2 text-center'>Already have an account ? <span className='text-blue-300 cursor-pointer' onClick={handleNavigate}>Login</span> </p>
         </div>
       </div>
     </div>
