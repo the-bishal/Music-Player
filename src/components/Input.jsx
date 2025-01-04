@@ -21,13 +21,15 @@ const Input = ({
             >{label}</label>}
             <input 
                 id={id}
+                ref={ref}
                 type={type} 
                 placeholder={placeholder}  
                 className={`border-none outline-none ${bgColor} ${textColor} ${className}`}
                 {...props}
+                
             />
         </div>
     )
 }
 
-export default Input
+export default React.forwardRef(Input)
