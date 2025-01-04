@@ -11,6 +11,8 @@ const LoginComp = () => {
     navigate("/signup")
   }
 
+  const LoginUser = (e) => {}
+
   return (
     <div className="h-screen flex flex-col md:flex-row">
       {/* Left side with image */}
