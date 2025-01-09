@@ -62,7 +62,7 @@ const SignupComp = () => {
                 labelClass='block text-gray-400 text-sm font-bold mb-1'
               />
             </div>
-            {errors.fullName && <p className="text-red-500 mb-1 -mt-3">{errors.fullName.message}</p>}
+            {errors.fullName && <p className="text-red-500 mb-1">{errors.fullName.message}</p>}
             <div className="mt-2">
               <Input
                 label="Username"
@@ -74,7 +74,7 @@ const SignupComp = () => {
                 labelClass="block text-gray-400 text-sm font-bold mb-1"
               />
             </div>
-            {errors.username && <p className="text-red-500 mb-1 -mt-3">{errors.username.message}</p>}
+            {errors.username && <p className="text-red-500 mb-1">{errors.username.message}</p>}
             <div className="mt-2">
               <Input
                 label="Email"
@@ -90,7 +90,7 @@ const SignupComp = () => {
                 labelClass="block text-gray-400 text-sm font-bold mb-1"
               />
             </div>
-            {errors.email && <p className="text-red-500 mb-1 -mt-3">{errors.email.message}</p>}
+            {errors.email && <p className="text-red-500 mb-1">{errors.email.message}</p>}
             <div className='mt-2'>
               <Input
                 label='Avatar'
@@ -102,7 +102,7 @@ const SignupComp = () => {
                 labelClass='block text-gray-400 text-sm font-bold mb-1'
               />
             </div>
-            {errors.avatar && <p className="text-red-500 mb-1 -mt-3">{errors.avatar.message}</p>}
+            {errors.avatar && <p className="text-red-500 mb-1">{errors.avatar.message}</p>}
             <div className="mt-2 mb-6">
               <Input
                 label="Password"
@@ -115,7 +115,7 @@ const SignupComp = () => {
                 labelClass="block text-gray-400 text-sm font-bold mb-1"
               />
             </div>
-            {errors.password && <p className="text-red-500 mb-1 -mt-3">{errors.password.message}</p>}
+            {errors.password && <p className="text-red-500 mb-1">{errors.password.message}</p>}
             <div className="flex items-center justify-between">
               <button
                 className="bg-green-500 hover:bg-green-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline w-full"
