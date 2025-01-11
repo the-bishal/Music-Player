@@ -115,7 +115,7 @@ const SignupComp = () => {
                 labelClass="block text-gray-400 text-sm font-bold mb-1"
               />
             </div>
-            {errors.password && <p className="text-red-500 mb-1">{errors.password.message}</p>}
+            {errors.password && <p className="text-red-500 -mt-5 mb-4">{errors.password.message}</p>}
             <div className="flex items-center justify-between">
               <button
                 className="bg-green-500 hover:bg-green-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline w-full"
