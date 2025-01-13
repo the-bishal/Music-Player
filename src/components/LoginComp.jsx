@@ -4,10 +4,13 @@ import Tiger from '../assets/images/tiger.png'
 import { useNavigate } from 'react-router'
 import { useForm } from 'react-hook-form'
 import authService from '../music_backend/auth'
+import { useDispatch } from 'react-redux'
+import {login as authLogin} from "../store/authSlice"
 
 const LoginComp = () => {
 
   const navigate = useNavigate();
+  const dispatch = useDispatch();
   const {register, handleSubmit, formState:{errors}} = useForm()
   
 
@@ -21,7 +24,7 @@ const LoginComp = () => {
       if (!userData || userData instanceof Error) {
         throw new Error(userData);
       }
-
+      dispatch(authLogin(userData))
       navigate("../pages/Homepage.jsx")
     } catch (error) {
       console.log(error);
